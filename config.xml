@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.videodesk.stryng" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <hook src="hooks/build.sh" type="before_build" />
+    <name>Stryng</name>
+    <description>
+      An app to sync your communication channels
+    </description>
+    <author email="it@stryng.com" href="https://www.stryng.com">
+        Stryng
+    </author>
+    <preference name="Orientation" value="portrait" />
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="ios">
+        <config-file parent="UIBackgroundModes" target="*-Info.plist">
+            <array>
+                <string>remote-notification</string>
+                <string>fetch</string>
+            </array>
+        </config-file>
+        <config-file parent="NSMicrophoneUsageDescription" target="*-Info.plist">
+            <string>stryng uses microphones</string>
+        </config-file>
+        <config-file parent="NSCameraUsageDescription" target="*-Info.plist">
+            <string>stryng uses photos</string>
+        </config-file>
+        <config-file parent="NSPhotoLibraryUsageDescription" target="*-Info.plist">
+            <string>stryng uses photos</string>
+        </config-file>
+        <preference name="KeychainAccessibility" value="WhenUnlocked" />
+        <preference name="KeyboardShrinksView" value="false" />
+        <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+        <preference name="iosPersistentFileLocation" value="Library" />
+        <preference name="BackupWebStorage" value="none" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <icon height="180" src="customer/stryng/ios/icon-60@3x.png" width="180" />
+        <icon height="60" src="customer/stryng/ios/icon-60.png" width="60" />
+        <icon height="120" src="customer/stryng/ios/icon-60@2x.png" width="120" />
+        <icon height="76" src="customer/stryng/ios/icon-76.png" width="76" />
+        <icon height="152" src="customer/stryng/ios/icon-76@2x.png" width="152" />
+        <icon height="40" src="customer/stryng/ios/icon-40.png" width="40" />
+        <icon height="80" src="customer/stryng/ios/icon-40@2x.png" width="80" />
+        <icon height="57" src="customer/stryng/ios/icon.png" width="57" />
+        <icon height="114" src="customer/stryng/ios/icon@2x.png" width="114" />
+        <icon height="72" src="customer/stryng/ios/icon-72.png" width="72" />
+        <icon height="144" src="customer/stryng/ios/icon-72@2x.png" width="144" />
+        <icon height="29" src="customer/stryng/ios/icon-small.png" width="29" />
+        <icon height="58" src="customer/stryng/ios/icon-small@2x.png" width="58" />
+        <icon height="50" src="customer/stryng/ios/icon-50.png" width="50" />
+        <icon height="100" src="customer/stryng/ios/icon-50@2x.png" width="100" />
+        <icon height="167" src="customer/stryng/ios/icon-83.5@2x.png" width="167" />
+        <splash src="customer/stryng/ios/Default@2x~universal~anyany.png" />
+        <feature name="CDVWKWebViewEngine">
+            <param name="ios-package" value="CDVWKWebViewEngine" />
+        </feature>
+        <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+    </platform>
+    <engine name="android" spec="^6.2.3" />
+    <plugin name="cordova-plugin-wkwebview-engine" spec="^1.1.3" />
+    <plugin name="cordova-sqlite-storage" spec="^2.0.4" />
+    <engine name="ios" spec="~4.5.1" />
+</widget>
